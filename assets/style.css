@@ -1,0 +1,66 @@
+header {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #1A5D78;
+    background-color: #1A5D78;
+}
+
+header h1 {
+    color: white;
+    font-size: 40px;
+}
+
+.search_section {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+}
+
+label {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+input {
+    height: 35px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+button {
+    background-color: #1A5D78;
+    margin: 5px;
+    height: 33px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    border: #1A5D78
+}
+
+main {
+
+    display: flex;
+    margin: 20px;
+
+}
+
+.current_forecast {
+    border: 1px solid black;
+    width: 70%;
+}
+
+.city_breakdown {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 100%;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+
+}
