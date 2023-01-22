@@ -40,7 +40,7 @@ button {
     border: #1A5D78
 }
 
-main {
+.main1 {
 
     display: flex;
     margin: 20px;
@@ -63,4 +63,15 @@ h2 {
     font-size: 40px;
     font-weight: bold;
 
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.main2 {
+    display: flex;
+    margin: 20px;
 }
