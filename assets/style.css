@@ -14,7 +14,7 @@ header h1 {
     margin: 20px;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 25%;
 
 }
 
@@ -44,12 +44,13 @@ button {
 
     display: flex;
     margin: 20px;
+    height: 320px;
 
 }
 
 .current_forecast {
     border: 1px solid black;
-    width: 70%;
+    width: 85%;
 }
 
 .city_breakdown {
@@ -68,10 +69,36 @@ h2 {
 .buttons {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 25%;
+    margin: 5px;
 }
 
 .main2 {
     display: flex;
     margin: 20px;
+}
+
+.five_day_forecast {
+    width: 80%;
+}
+
+.five_day_breakdown {
+    margin: 5px;
+    border: 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.day_breakdown {
+
+    margin: 5px;
+    background-color: #1A5D78;
+    width: 40%;
+
 }

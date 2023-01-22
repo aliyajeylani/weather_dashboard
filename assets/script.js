@@ -4,8 +4,10 @@
 
 var citySearched = document.getElementById("city_searched");
 var searchButton = document.getElementById("search");
-
-
+var city = document.getElementById("city");
+var temp = document.getElementById("temp");
+var wind = document.getElementById("wind");
+var humidity = document.getElementById("humidity");
 
 searchButton.addEventListener("click", getForecast);
 
@@ -30,7 +32,10 @@ function getForecast() {
         .then(function (data) {
             console.log(data)
 
-            document.getElementById("humidity").textContent = "Humdity: " + data.list[0].main.humidity;
+            city.textContent = userInput;
+            temp.textContent = "Temp: " + data.list[0].main.temp;
+            wind.textContent = "Wind: " + data.list[0].wind.deg;
+            humidity.textContent = "Humdity: " + data.list[0].main.humidity;
 
         })
 
