@@ -52,7 +52,12 @@ function getForecast() {
 
             console.log(currentDate);
 
-            city.textContent = userInput + " (" + currentDate + ")" + data.list[0].weather[0].icon;
+
+            var weatherUrl = `http://openweathermap.org/img/wn/042@2x.png`;
+
+            var icon = data.list[0].weather[0].icon;
+
+            city.textContent = userInput + " (" + currentDate + ")" + weatherUrl;
             temp.textContent = "Temp: " + data.list[0].main.temp;
             wind.textContent = "Wind: " + data.list[0].wind.deg;
             humidity.textContent = "Humdity: " + data.list[0].main.humidity;
