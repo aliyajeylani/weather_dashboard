@@ -56,13 +56,22 @@ button {
 .city_breakdown {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 10px;
     width: 100%;
+
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
+
+
+}
+
+#city {
+    margin: 2px;
+    display: flex;
+    align-items: center;
 
 }
 
@@ -101,6 +110,7 @@ h2 {
     margin: 5px;
     background-color: #1A5D78;
     width: 40%;
+    padding: 5px;
 
 }
 
