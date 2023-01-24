@@ -71,13 +71,13 @@ function getForecast() {
 
             function temperatureConverter(valNum) {
                 valNum = parseFloat(valNum);
-                console.log(((valNum - 273.15) * 1.8) + 32);
+                // console.log(((valNum - 273.15) * 1.8) + 32);
                 return ((valNum - 273.15) * 1.8) + 32;
 
             }
 
 
-            temp.textContent = "Temp: " + temperatureConverter(tempKelvin) + '°F';
+            temp.textContent = "Temp: " + temperatureConverter(tempKelvin).toFixed() + '°F';
 
             wind.textContent = "Wind: " + data.list[0].wind.deg;
             humidity.textContent = "Humdity: " + data.list[0].main.humidity + ' %';
@@ -89,7 +89,8 @@ function getForecast() {
 
             date1.textContent = data.list[1].dt_txt;
             icon1.appendChild(image1);
-            temp1.textContent = "Temp: " + data.list[1].main.temp;
+            temp1Kelvin = data.list[1].main.temp;
+            temp1.textContent = "Temp: " + temperatureConverter(temp1Kelvin).toFixed() + '°F';
             wind1.textContent = "Wind: " + data.list[1].wind.deg;
             humidity1.textContent = "Humdity: " + data.list[1].main.humidity + ' %';
 
@@ -99,7 +100,8 @@ function getForecast() {
 
             date2.textContent = data.list[2].dt_txt;
             icon2.appendChild(image2);
-            temp2.textContent = "Temp: " + data.list[2].main.temp;
+            temp2Kelvin = data.list[2].main.temp;
+            temp2.textContent = "Temp: " + temperatureConverter(temp2Kelvin).toFixed() + '°F';
             wind2.textContent = "Wind: " + data.list[2].wind.deg;
             humidity2.textContent = "Humdity: " + data.list[2].main.humidity + ' %';
 
@@ -109,7 +111,8 @@ function getForecast() {
 
             date3.textContent = data.list[3].dt_txt;
             icon3.appendChild(image3);
-            temp3.textContent = "Temp: " + data.list[3].main.temp;
+            temp3Kelvin = data.list[3].main.temp;
+            temp3.textContent = "Temp: " + temperatureConverter(temp3Kelvin).toFixed() + '°F';
             wind3.textContent = "Wind: " + data.list[3].wind.deg;
             humidity3.textContent = "Humdity: " + data.list[3].main.humidity + ' %';
 
@@ -119,7 +122,8 @@ function getForecast() {
 
             date4.textContent = data.list[4].dt_txt;
             icon4.appendChild(image4);
-            temp4.textContent = "Temp: " + data.list[4].main.temp;
+            temp4Kelvin = data.list[4].main.temp;
+            temp4.textContent = "Temp: " + temperatureConverter(temp4Kelvin).toFixed() + '°F';
             wind4.textContent = "Wind: " + data.list[4].wind.deg;
             humidity4.textContent = "Humdity: " + data.list[4].main.humidity + ' %';
 
@@ -129,7 +133,8 @@ function getForecast() {
 
             date5.textContent = data.list[5].dt_txt;
             icon5.appendChild(image5);
-            temp5.textContent = "Temp: " + data.list[5].main.temp;
+            temp5Kelvin = data.list[5].main.temp;
+            temp5.textContent = "Temp: " + temperatureConverter(temp5Kelvin).toFixed() + '°F';
             wind5.textContent = "Wind: " + data.list[5].wind.deg;
             humidity5.textContent = "Humdity: " + data.list[5].main.humidity + ' %';
 
