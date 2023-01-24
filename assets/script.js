@@ -74,10 +74,10 @@ function getForecast() {
 
 
             var image1 = document.createElement("img");
-            image1.src = `http://openweathermap.org/img/wn/${data.list[1].weather[0].icon}@2x.png`;
+            image1.src = `http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`;
 
 
-            var date1GMT = new Date(data.list[1].dt_txt);
+            var date1GMT = new Date(data.list[8].dt_txt);
 
             var centralTime1 = date1GMT.toLocaleString('en-us', {
                 timeZone: 'CST',
@@ -86,17 +86,17 @@ function getForecast() {
 
             date1.textContent = centralTime1;
             icon1.appendChild(image1);
-            temp1.textContent = "Temp: " + data.list[1].main.temp.toFixed() + '°F';
-            wind1.textContent = "Wind: " + data.list[1].wind.speed + " MPH";
-            humidity1.textContent = "Humdity: " + data.list[1].main.humidity + ' %';
+            temp1.textContent = "Temp: " + data.list[8].main.temp.toFixed() + '°F';
+            wind1.textContent = "Wind: " + data.list[8].wind.speed + " MPH";
+            humidity1.textContent = "Humdity: " + data.list[8].main.humidity + ' %';
 
 
             var image2 = document.createElement("img");
-            image2.src = `http://openweathermap.org/img/wn/${data.list[2].weather[0].icon}@2x.png`;
+            image2.src = `http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`;
 
 
 
-            var date2GMT = new Date(data.list[2].dt_txt);
+            var date2GMT = new Date(data.list[16].dt_txt);
 
             var centralTime2 = date2GMT.toLocaleString('en-us', {
                 timeZone: 'CST',
@@ -105,16 +105,16 @@ function getForecast() {
 
             date2.textContent = centralTime2;
             icon2.appendChild(image2);
-            temp2.textContent = "Temp: " + data.list[2].main.temp.toFixed() + '°F';
-            wind2.textContent = "Wind: " + data.list[2].wind.speed + " MPH";
-            humidity2.textContent = "Humdity: " + data.list[2].main.humidity + ' %';
+            temp2.textContent = "Temp: " + data.list[16].main.temp.toFixed() + '°F';
+            wind2.textContent = "Wind: " + data.list[16].wind.speed + " MPH";
+            humidity2.textContent = "Humdity: " + data.list[16].main.humidity + ' %';
 
 
             var image3 = document.createElement("img");
-            image3.src = `http://openweathermap.org/img/wn/${data.list[3].weather[0].icon}@2x.png`;
+            image3.src = `http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`;
 
 
-            var date3GMT = new Date(data.list[3].dt_txt);
+            var date3GMT = new Date(data.list[24].dt_txt);
 
             var centralTime3 = date3GMT.toLocaleString('en-us', {
                 timeZone: 'CST',
@@ -123,16 +123,16 @@ function getForecast() {
 
             date3.textContent = centralTime3;
             icon3.appendChild(image3);
-            temp3.textContent = "Temp: " + data.list[3].main.temp.toFixed() + '°F';
-            wind3.textContent = "Wind: " + data.list[3].wind.speed + " MPH";
-            humidity3.textContent = "Humdity: " + data.list[3].main.humidity + ' %';
+            temp3.textContent = "Temp: " + data.list[24].main.temp.toFixed() + '°F';
+            wind3.textContent = "Wind: " + data.list[24].wind.speed + " MPH";
+            humidity3.textContent = "Humdity: " + data.list[24].main.humidity + ' %';
 
 
             var image4 = document.createElement("img");
-            image4.src = `http://openweathermap.org/img/wn/${data.list[4].weather[0].icon}@2x.png`;
+            image4.src = `http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`;
 
 
-            var date4GMT = new Date(data.list[4].dt_txt);
+            var date4GMT = new Date(data.list[32].dt_txt);
 
             var centralTime4 = date4GMT.toLocaleString('en-us', {
                 timeZone: 'CST',
@@ -141,16 +141,16 @@ function getForecast() {
 
             date4.textContent = centralTime4;
             icon4.appendChild(image4);
-            temp4.textContent = "Temp: " + data.list[4].main.temp.toFixed() + '°F';
-            wind4.textContent = "Wind: " + data.list[4].wind.speed + " MPH";
-            humidity4.textContent = "Humdity: " + data.list[4].main.humidity + ' %';
+            temp4.textContent = "Temp: " + data.list[32].main.temp.toFixed() + '°F';
+            wind4.textContent = "Wind: " + data.list[32].wind.speed + " MPH";
+            humidity4.textContent = "Humdity: " + data.list[32].main.humidity + ' %';
 
 
             var image5 = document.createElement("img");
-            image5.src = `http://openweathermap.org/img/wn/${data.list[5].weather[0].icon}@2x.png`;
+            image5.src = `http://openweathermap.org/img/wn/${data.list[39].weather[0].icon}@2x.png`;
 
 
-            var date5GMT = new Date(data.list[5].dt_txt);
+            var date5GMT = new Date(data.list[39].dt_txt);
 
             var centralTime5 = date5GMT.toLocaleString('en-us', {
                 timeZone: 'CST',
@@ -159,9 +159,9 @@ function getForecast() {
 
             date5.textContent = centralTime5;
             icon5.appendChild(image5);
-            temp5.textContent = "Temp: " + data.list[5].main.temp.toFixed() + '°F';
-            wind5.textContent = "Wind: " + data.list[5].wind.speed + " MPH";
-            humidity5.textContent = "Humdity: " + data.list[5].main.humidity + ' %';
+            temp5.textContent = "Temp: " + data.list[39].main.temp.toFixed() + '°F';
+            wind5.textContent = "Wind: " + data.list[39].wind.speed + " MPH";
+            humidity5.textContent = "Humdity: " + data.list[39].main.humidity + ' %';
 
 
 

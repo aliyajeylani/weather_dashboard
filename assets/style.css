@@ -117,3 +117,17 @@ h2 {
 .date {
     font-size: 20px;
 }
+
+#history {
+
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    margin: 40px;
+}
+
+p {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
