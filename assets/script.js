@@ -55,7 +55,7 @@ function getForecast() {
 
             var currentDate = data.list[0].dt_txt;
 
-            console.log(currentDate);
+            // console.log(currentDate);
 
 
             var iconUrl = `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
@@ -66,9 +66,21 @@ function getForecast() {
 
             city.textContent = userInput + " (" + currentDate + ") ";
             city.appendChild(image);
-            temp.textContent = "Temp: " + data.list[0].main.temp;
+
+            tempKelvin = data.list[0].main.temp;
+
+            function temperatureConverter(valNum) {
+                valNum = parseFloat(valNum);
+                console.log(((valNum - 273.15) * 1.8) + 32);
+                return ((valNum - 273.15) * 1.8) + 32;
+
+            }
+
+
+            temp.textContent = "Temp: " + temperatureConverter(tempKelvin) + '°F';
+
             wind.textContent = "Wind: " + data.list[0].wind.deg;
-            humidity.textContent = "Humdity: " + data.list[0].main.humidity;
+            humidity.textContent = "Humdity: " + data.list[0].main.humidity + ' %';
 
 
 
@@ -79,7 +91,7 @@ function getForecast() {
             icon1.appendChild(image1);
             temp1.textContent = "Temp: " + data.list[1].main.temp;
             wind1.textContent = "Wind: " + data.list[1].wind.deg;
-            humidity1.textContent = "Humdity: " + data.list[1].main.humidity;
+            humidity1.textContent = "Humdity: " + data.list[1].main.humidity + ' %';
 
 
             var image2 = document.createElement("img");
@@ -89,7 +101,7 @@ function getForecast() {
             icon2.appendChild(image2);
             temp2.textContent = "Temp: " + data.list[2].main.temp;
             wind2.textContent = "Wind: " + data.list[2].wind.deg;
-            humidity2.textContent = "Humdity: " + data.list[2].main.humidity;
+            humidity2.textContent = "Humdity: " + data.list[2].main.humidity + ' %';
 
 
             var image3 = document.createElement("img");
@@ -99,7 +111,7 @@ function getForecast() {
             icon3.appendChild(image3);
             temp3.textContent = "Temp: " + data.list[3].main.temp;
             wind3.textContent = "Wind: " + data.list[3].wind.deg;
-            humidity3.textContent = "Humdity: " + data.list[3].main.humidity;
+            humidity3.textContent = "Humdity: " + data.list[3].main.humidity + ' %';
 
 
             var image4 = document.createElement("img");
@@ -109,7 +121,7 @@ function getForecast() {
             icon4.appendChild(image4);
             temp4.textContent = "Temp: " + data.list[4].main.temp;
             wind4.textContent = "Wind: " + data.list[4].wind.deg;
-            humidity4.textContent = "Humdity: " + data.list[4].main.humidity;
+            humidity4.textContent = "Humdity: " + data.list[4].main.humidity + ' %';
 
 
             var image5 = document.createElement("img");
@@ -119,7 +131,7 @@ function getForecast() {
             icon5.appendChild(image5);
             temp5.textContent = "Temp: " + data.list[5].main.temp;
             wind5.textContent = "Wind: " + data.list[5].wind.deg;
-            humidity5.textContent = "Humdity: " + data.list[5].main.humidity;
+            humidity5.textContent = "Humdity: " + data.list[5].main.humidity + ' %';
 
 
 
