@@ -31,16 +31,78 @@ var icon5 = document.getElementById('icon5');
 var temp5 = document.getElementById("temp5");
 var wind5 = document.getElementById("wind5");
 var humidity5 = document.getElementById("humidity5");
+var button = document.querySelector('.buttons');
+var array = [];
+// var userInput = "";
 
-searchButton.addEventListener("click", getForecast);
+searchButton.addEventListener("click", handleSearch);
 
-function getForecast() {
+button.addEventListener("click", handleButton);
 
-    var userInput = citySearched.value;
+function displayHistory() {
+    button.innerHTML = "";
 
-    var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${userInput}&appid=e015a0a7f21ac1de523ad774a61e8902&units=imperial`;
+    for (var i = array.length - 1; i >= 0; i--) {
 
-    console.log(userInput);
+        var btn = document.createElement("button");
+        btn.setAttribute("type", "button");
+        btn.setAttribute("class", "history_btn");
+        btn.setAttribute("data-search", array[i]);
+        btn.textContent = array[i];
+        button.append(btn);
+    }
+}
+
+function addHistory(search) {
+
+    if (array.indexOf(search) !== -1) {
+        return;
+    }
+    array.push(search);
+    localStorage.setItem("Cities", JSON.stringify(array));
+    displayHistory();
+}
+
+
+function getHistory() {
+
+    var storedHistory = localStorage.getItem("Cities");
+
+    if (storedHistory) {
+        array = JSON.parse(storedHistory)
+    }
+    displayHistory();
+}
+
+getHistory();
+
+function handleButton(e) {
+
+    if (!e.target.matches(".history_btn")) {
+        return;
+    }
+    var btn = e.target
+    var search = btn.getAttribute("data-search")
+    getForecast(search);
+}
+
+function handleSearch(e) {
+
+    if (!citySearched.value) {
+        return;
+    }
+    e.preventDefault();
+    var search = citySearched.value.trim();
+    getForecast(search);
+}
+
+function getForecast(search) {
+
+    addHistory(search);
+
+    var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=e015a0a7f21ac1de523ad774a61e8902&units=imperial`;
+
+    // console.log(userInput);
 
     fetch(requestUrl)
         .then(function (response) {
@@ -66,13 +128,13 @@ function getForecast() {
             var image = document.createElement("img");
             image.src = iconUrl;
 
-            city.textContent = userInput + " (" + centralTime + ") ";
+            city.textContent = search + " (" + centralTime + ") ";
             city.appendChild(image);
             temp.textContent = "Temp: " + data.list[0].main.temp.toFixed() + '°F';
             wind.textContent = "Wind: " + data.list[0].wind.speed + " MPH";
             humidity.textContent = "Humdity: " + data.list[0].main.humidity + ' %';
 
-
+            icon1.innerHTML = "";
             var image1 = document.createElement("img");
             image1.src = `http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`;
 
@@ -162,7 +224,6 @@ function getForecast() {
             temp5.textContent = "Temp: " + data.list[39].main.temp.toFixed() + '°F';
             wind5.textContent = "Wind: " + data.list[39].wind.speed + " MPH";
             humidity5.textContent = "Humdity: " + data.list[39].main.humidity + ' %';
-
 
 
         })
