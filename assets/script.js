@@ -1,4 +1,3 @@
-// var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e015a0a7f21ac1de523ad774a61e8902";
 
 var citySearched = document.getElementById("city_searched");
 var searchButton = document.getElementById("search");
@@ -33,7 +32,7 @@ var wind5 = document.getElementById("wind5");
 var humidity5 = document.getElementById("humidity5");
 var button = document.querySelector('.buttons');
 var array = [];
-// var userInput = "";
+
 
 searchButton.addEventListener("click", handleSearch);
 
@@ -102,7 +101,6 @@ function getForecast(search) {
 
     var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=e015a0a7f21ac1de523ad774a61e8902&units=imperial`;
 
-    // console.log(userInput);
 
     fetch(requestUrl)
         .then(function (response) {
@@ -152,7 +150,7 @@ function getForecast(search) {
             wind1.textContent = "Wind: " + data.list[8].wind.speed + " MPH";
             humidity1.textContent = "Humdity: " + data.list[8].main.humidity + ' %';
 
-
+            icon2.innerHTML = "";
             var image2 = document.createElement("img");
             image2.src = `http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`;
 
@@ -171,7 +169,7 @@ function getForecast(search) {
             wind2.textContent = "Wind: " + data.list[16].wind.speed + " MPH";
             humidity2.textContent = "Humdity: " + data.list[16].main.humidity + ' %';
 
-
+            icon3.innerHTML = "";
             var image3 = document.createElement("img");
             image3.src = `http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`;
 
@@ -189,7 +187,7 @@ function getForecast(search) {
             wind3.textContent = "Wind: " + data.list[24].wind.speed + " MPH";
             humidity3.textContent = "Humdity: " + data.list[24].main.humidity + ' %';
 
-
+            icon4.innerHTML = "";
             var image4 = document.createElement("img");
             image4.src = `http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`;
 
@@ -207,7 +205,7 @@ function getForecast(search) {
             wind4.textContent = "Wind: " + data.list[32].wind.speed + " MPH";
             humidity4.textContent = "Humdity: " + data.list[32].main.humidity + ' %';
 
-
+            icon5.innerHTML = "";
             var image5 = document.createElement("img");
             image5.src = `http://openweathermap.org/img/wn/${data.list[39].weather[0].icon}@2x.png`;
 
